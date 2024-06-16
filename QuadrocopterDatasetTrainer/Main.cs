@@ -21,20 +21,27 @@ namespace QuadrocopterDatasetTrainer
             Runtime.SetLoggerObject(logger);
 
             chartMain.Series.Clear();
+            chartFrequencyAmplitudes.Series.Clear();
+            chartAmplitude.Series.Clear();
             chartColateral.Series.Clear();
 
-            chartMain.Series.Add("Амплитудный Спектр");
+            chartMain.Series.Add("Аудио спектр");
+            chartFrequencyAmplitudes.Series.Add("Частотный спектр");    
+            chartAmplitude.Series.Add("Амплитудный Спектр");
             chartColateral.Series.Add("Односторонний Амплитудный Спектр");
         }
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
             AudioProcessor processor = new AudioProcessor();
-            var result = processor.ProcessAudio(textBoxFilePath.Text);
+            var result = processor.ProcessAudio(textBoxFilePath.Text, out Dictionary<double, double> audioSpecter);
+            var freqAmp = processor.ProcessFrequencyAmplitudes(textBoxFilePath.Text);
 
             if (result != null) 
             {
-                processor.BuildChart(result, chartMain, "Амплитудный Спектр", result.Count());
+                processor.BuildChart(freqAmp, chartFrequencyAmplitudes, "Частотный спектр", freqAmp.Count());
+                processor.BuildChart(audioSpecter, chartMain, "Аудио спектр", audioSpecter.Count());
+                processor.BuildChart(result, chartAmplitude, "Амплитудный Спектр", result.Count());
                 processor.BuildChart(result, chartColateral, "Односторонний Амплитудный Спектр", result.Count() / 2);
             }
 
@@ -51,7 +58,7 @@ namespace QuadrocopterDatasetTrainer
         private void buttonRecognize_Click(object sender, EventArgs e)
         {
             AudioProcessor processor = new AudioProcessor();
-            var result = processor.ProcessAudio(textBoxRecognizePath.Text);
+            var result = processor.ProcessAudio(textBoxRecognizePath.Text, out Dictionary<double, double> audioSpecter);
 
             var recResult = Runtime.NeuralNetwork.Recognize(result.Select(d => d.Value).Take(Runtime.CropSize).ToArray());
 
