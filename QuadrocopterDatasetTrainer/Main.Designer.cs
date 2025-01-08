@@ -31,15 +31,15 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.logger = new System.Windows.Forms.ListBox();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -49,23 +49,23 @@
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
             this.buttonRun = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chartFrequencyAmplitudes = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartAmplitude = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartColateral = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonRecognize = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxRecognizePath = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.chartAmplitude = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartFrequencyAmplitudes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartFrequencyAmplitudes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAmplitude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartColateral)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAmplitude)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartFrequencyAmplitudes)).BeginInit();
             this.SuspendLayout();
             // 
             // logger
@@ -168,6 +168,38 @@
             this.tabPage1.Text = "Аудио. Результирующая функция Фурье";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // chartFrequencyAmplitudes
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartFrequencyAmplitudes.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFrequencyAmplitudes.Legends.Add(legend2);
+            this.chartFrequencyAmplitudes.Location = new System.Drawing.Point(621, 6);
+            this.chartFrequencyAmplitudes.Name = "chartFrequencyAmplitudes";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartFrequencyAmplitudes.Series.Add(series2);
+            this.chartFrequencyAmplitudes.Size = new System.Drawing.Size(613, 286);
+            this.chartFrequencyAmplitudes.TabIndex = 5;
+            this.chartFrequencyAmplitudes.Text = "chart1";
+            // 
+            // chartAmplitude
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chartAmplitude.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartAmplitude.Legends.Add(legend3);
+            this.chartAmplitude.Location = new System.Drawing.Point(6, 295);
+            this.chartAmplitude.Name = "chartAmplitude";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartAmplitude.Series.Add(series3);
+            this.chartAmplitude.Size = new System.Drawing.Size(613, 286);
+            this.chartAmplitude.TabIndex = 4;
+            this.chartAmplitude.Text = "chart1";
+            // 
             // chartColateral
             // 
             chartArea4.Name = "ChartArea1";
@@ -194,7 +226,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1237, 588);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Опознавание";
+            this.tabPage4.Text = "Тест распознавания";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // buttonRecognize
@@ -234,38 +266,6 @@
             this.tabPage2.Text = "Логгер";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // chartAmplitude
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chartAmplitude.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartAmplitude.Legends.Add(legend3);
-            this.chartAmplitude.Location = new System.Drawing.Point(6, 295);
-            this.chartAmplitude.Name = "chartAmplitude";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartAmplitude.Series.Add(series3);
-            this.chartAmplitude.Size = new System.Drawing.Size(613, 286);
-            this.chartAmplitude.TabIndex = 4;
-            this.chartAmplitude.Text = "chart1";
-            // 
-            // chartFrequencyAmplitudes
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartFrequencyAmplitudes.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartFrequencyAmplitudes.Legends.Add(legend2);
-            this.chartFrequencyAmplitudes.Location = new System.Drawing.Point(621, 6);
-            this.chartFrequencyAmplitudes.Name = "chartFrequencyAmplitudes";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartFrequencyAmplitudes.Series.Add(series2);
-            this.chartFrequencyAmplitudes.Size = new System.Drawing.Size(613, 286);
-            this.chartFrequencyAmplitudes.TabIndex = 5;
-            this.chartFrequencyAmplitudes.Text = "chart1";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,12 +280,12 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartFrequencyAmplitudes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAmplitude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartColateral)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartAmplitude)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartFrequencyAmplitudes)).EndInit();
             this.ResumeLayout(false);
 
         }
