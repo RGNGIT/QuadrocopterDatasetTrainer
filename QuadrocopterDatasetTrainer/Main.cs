@@ -33,6 +33,12 @@ namespace QuadrocopterDatasetTrainer
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBoxFilePath.Text))
+            {
+                MessageBox.Show("Некорректный ввод пути аудио файла!", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             AudioProcessor processor = new AudioProcessor();
             var result = processor.ProcessAudio(textBoxFilePath.Text, out Dictionary<double, double> audioSpecter);
             var freqAmp = processor.ProcessFrequencyAmplitudes(textBoxFilePath.Text);
