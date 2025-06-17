@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuadrocopterDatasetTrainer.Audio;
 
 namespace QuadrocopterDatasetTrainer
 {
@@ -11,6 +12,7 @@ namespace QuadrocopterDatasetTrainer
     {
         private static ListBox LoggerObject {  get; set; }
         public static List<List<double>> Dataset { get; set; } = new List<List<double>>();
+        public static List<AudioProcessor.SoundAnalysisResult> DatasetInfo = new List<AudioProcessor.SoundAnalysisResult>();
         public static NeuralHandler NeuralNetwork { get; set; } = new NeuralHandler();
         public static int CropSize { get; set; } = 128;
 

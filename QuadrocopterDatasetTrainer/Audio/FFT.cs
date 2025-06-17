@@ -17,7 +17,7 @@ namespace QuadrocopterDatasetTrainer.Audio
         public Dictionary<double, double> RunFrequencyAmp(string filePath)
         {
             int sampleRate = 44100; 
-            using (var audioFileReader = new AudioFileReader(filePath))
+            using (var audioFileReader = AudioProcessor.GetReader(filePath))
             {
                 float[] buffer = new float[audioFileReader.Length / 4];
                 int bytesRead = audioFileReader.Read(buffer, 0, buffer.Length);
@@ -62,7 +62,7 @@ namespace QuadrocopterDatasetTrainer.Audio
             Dictionary<double, double> amplitudeSpecterResult = new Dictionary<double, double>();
             Dictionary<double, double> audioSpecterResult = new Dictionary<double, double>();
 
-            using (var audioReader = new AudioFileReader(filePath)) 
+            using (var audioReader = AudioProcessor.GetReader(filePath)) 
             {
                 int sampleRate = audioReader.WaveFormat.SampleRate;
                 int channels = audioReader.WaveFormat.Channels;

@@ -25,6 +25,14 @@ namespace QuadrocopterDatasetTrainer
                 MessageBox.Show("Некорректный ввод логина/пароля!", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            (new Main()).Show();
+            Hide();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
